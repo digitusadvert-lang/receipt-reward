@@ -1,0 +1,23 @@
+services: 
+  - type: web 
+    name: receipt-reward-system 
+    env: python 
+    region: singapore 
+    buildCommand: | 
+      apt-get update 
+      apt-get install -y tesseract-ocr libtesseract-dev 
+      pip install -r requirements.txt 
+    startCommand: gunicorn app:app 
+    envVars: 
+      - key: DATABASE_URL 
+        fromDatabase: 
+          name: receipt-reward-db 
+          property: connectionString 
+      - key: TELEGRAM_BOT_TOKEN 
+        sync: false 
+      - key: TELEGRAM_BOT_USERNAME 
+        sync: false 
+      - key: ADMIN_PASSWORD 
+        sync: false 
+      - key: SECRET_KEY 
+        generateValue: true 

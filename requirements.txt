@@ -1,6 +1,11 @@
-pip install --upgrade pip
-Flask==2.3.3
-Flask-SQLAlchemy==3.0.5
-pytesseract==0.3.10
-Pillow==9.5.0
-gunicorn
+Flask==3.0.0 
+Flask-SQLAlchemy==3.1.1 
+python-dotenv==1.0.0 
+Pillow==10.1.0 
+opencv-python-headless==4.8.1.78 
+pytesseract==0.3.10 
+imagehash==4.3.1 
+requests==2.31.0 
+psycopg2-binary==2.9.9 
+numpy==1.24.3 
+gunicorn==21.2.0 
