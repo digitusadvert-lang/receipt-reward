@@ -1,13 +1,10 @@
 services:
   - type: web
-    name: receipt-reward-system
+    name: receipt-reward
     env: python
+    pythonVersion: "3.9.0"  # Force Python 3.9
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app
+    startCommand: gunicorn rrs:app
     envVars:
       - key: PYTHON_VERSION
         value: 3.9.0
-    disk:
-      name: uploads
-      mountPath: /opt/render/project/src/uploads
-      sizeGB: 1
