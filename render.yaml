@@ -2,6 +2,7 @@ services:
   - type: web
     name: receipt-reward
     env: python
+    pythonVersion: "3.9.0"  # THIS FORCES Python 3.9
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn rrs:app
     envVars:
